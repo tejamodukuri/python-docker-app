@@ -6,14 +6,14 @@ git credentialsId: '9c5600a6-c0d3-4e81-a2b3-cca6d7257abb', url: 'https://github.
       }
    
    stage('Docker Build') {
-     def app = docker.build "pavan52/pythondockerapp"
+     def app = docker.build "pavan52/projects"
     }
    
    stage("Tag & Push image"){
 withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://hub.docker.com/']) {
-          sh 'docker tag pavan52/pythondockerapp pavan52/pythondockerapp:001'
-          sh 'docker push manee2k6/pythondockerapp:001'
-          sh 'docker push manee2k6/pythondockerapp:latest'
+          sh 'docker tag pavan52/projects pavan52/projects:001'
+          sh 'docker push manee2k6/projects:001'
+          sh 'docker push manee2k6/projects:latest'
       }
     }
    
