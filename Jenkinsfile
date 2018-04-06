@@ -6,7 +6,7 @@ git credentialsId: '9c5600a6-c0d3-4e81-a2b3-cca6d7257abb', url: 'https://github.
       }
    
    stage('Docker Build') {
-     def app = docker.build "pavan52/projects"
+     def app = docker.build "pavan52/jenkins-docker"
     }
    
    stage("Tag & Push image"){
