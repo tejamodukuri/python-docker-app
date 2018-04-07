@@ -12,10 +12,8 @@ git credentialsId: '9c5600a6-c0d3-4e81-a2b3-cca6d7257abb', url: 'https://github.
    stage("Tag & Push image"){
 withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://hub.docker.com/']) {
           sh 'docker tag pavan52/pythondocker pavan52/pythondocker:001'
-          sh 'docker login docker.io'
-          sh 'docker push pavan52/pythondocker'
-          sh 'docker push pavan52/pythondocker:001'
-      }
+          sh 'docker push pavan52/projects'
+              }
     }
    
     stage('App deployed to Docker') {
